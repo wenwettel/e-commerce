@@ -14,13 +14,17 @@ function Navbar() {
 
   return (
     <div className="navBar">
-      <img
-        src={Logo}
-        alt="logo"
-        className="logo"
-        onClick={() => clickEnCarrito('Inicio')}
-      />
-      <span>Usted esta en: {section}</span>
+      <div className="container-logo">
+        <img
+          src={Logo}
+          alt="logo"
+          className="logo"
+          onClick={() => clickEnCarrito('Inicio')}
+        />
+        <span>
+          Usted esta en: <b>{section}</b>
+        </span>
+      </div>
       <CarWidget
         number={3}
         clickEnCarrito={clickEnCarrito}

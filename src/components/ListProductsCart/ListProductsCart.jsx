@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Modal() {
+function ListProductCart() {
   return (
     <div>
       <ul>
@@ -12,4 +12,4 @@ function Modal() {
   );
 }
 
-export default Modal;
+export default ListProductCart;
