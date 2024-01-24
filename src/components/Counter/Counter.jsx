@@ -1,25 +1,18 @@
 import React from 'react';
 import './counterStyled.css';
-import { useState, useEffect } from 'react';
+import { useCount } from '../../hooks/useCount';
 
 function Counter() {
-  const [valor, setValor] = useState(0);
+  const { add, subtraction, valor } = useCount(0, 0, 4);
 
   /*Ciclos del componente: mount- change - dismount*/
-  useEffect(() => {
+  /*useEffect(() => {
     console.log('montaje');
     console.log(`El componente se actualizo ${valor}`);
     return () => {
       console.log('se desmonto el componente');
     };
-  }, [valor]);
-
-  const add = () => {
-    setValor(valor + 1);
-  };
-  const subtraction = () => {
-    setValor(valor - 1);
-  };
+  }, [valor]);*/
 
   return (
     <div className="counter">
