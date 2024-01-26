@@ -5,10 +5,7 @@ import './cartWidget.css';
 function CarWidget({ number, clickEnCarrito, isShowModal }) {
   return (
     <div className="containerCart">
-      <ShoppingCartIcon
-        className="cartIcon"
-        onClick={() => clickEnCarrito('Carrito')}
-      />
+      <ShoppingCartIcon className="cartIcon" />
       <span className="cartNumber">{number}</span>
       {/* {isShowModal && <ListProductCart />} */}
     </div>

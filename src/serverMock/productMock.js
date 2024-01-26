@@ -29,14 +29,35 @@ export const products = [
     img: 'https://profesordeyogaonline.com/sites/default/files/imagen-blog/2020-08/clases-de-yoga-online.jpg',
   },
 ];
+export const productosFail = [];
+
+//Promesa
 
 export const getProducts = () => {
   return new Promise((resolve, reject) => {
     if (products.length === 0) {
-      reject(new Error('no hay productos'));
+      reject(new Error('Products is empty'));
     }
     setTimeout(() => {
       resolve(products);
+    }, 2000);
+  });
+};
+
+export const getProductById = (id) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        products.find((product) => product.id.toString() === id.toString())
+      );
+    }, 2000);
+  });
+};
+
+export const getProductsByCategory = (category) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(products.filter((product) => product.category === category));
     }, 2000);
   });
 };

@@ -2,41 +2,34 @@ import './navBarStyled.css';
 import CarWidget from '../CartWidget/CarWidget';
 import Logo from '../../assets/img/logo.jpg';
 import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
-  const [section, setSection] = useState('Inicio');
   const [isShowModal, setIsShowModal] = useState(false);
 
-  const clickEnCarrito = (seccion) => {
-    setSection(seccion);
+  const clickEnCarrito = () => {
     setIsShowModal(true);
   };
 
   return (
     <nav className="navBar">
       <div className="container-logo">
-        <img
-          src={Logo}
-          alt="logo"
-          className="logo"
-          onClick={() => clickEnCarrito('Inicio')}
-        />
-        <span>
-          <b>{section}</b>
-        </span>
+        <Link to="/">
+          <img src={Logo} alt="logo" className="logo" />
+        </Link>
       </div>
       <ul className="categoryList">
         <li>
-          <a href="#">Cosmetica</a>
+          <NavLink to="/category/cosmetic">Cosmetica</NavLink>
         </li>
         <li>
-          <a href="#">Clases</a>
+          <NavLink to="/category/class">Clases</NavLink>
         </li>
         <li>
-          <a href="#">Elementos</a>
+          <NavLink to="/category/elements">Elementos</NavLink>
         </li>
         <li>
-          <a href="#">Contacto</a>
+          <NavLink to="/Contactos">Contactos</NavLink>
         </li>
       </ul>
       <CarWidget
