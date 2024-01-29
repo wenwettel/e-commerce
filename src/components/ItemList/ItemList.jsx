@@ -8,7 +8,7 @@ function ItemList({ items }) {
       {items.map((item) => {
         return (
           <Link to={`/item/${item.id}`}>
-            <Item {...item} />
+            <Item {...item} isClickable />
           </Link>
         );
       })}

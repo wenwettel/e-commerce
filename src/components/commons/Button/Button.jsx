@@ -1,10 +1,10 @@
 import './styled.css';
 
-function Button({ children, handleClick }) {
+function Button({ children, handleClick, ...props }) {
   return (
-    <div className="btn" onClick={handleClick}>
+    <button className="btn" onClick={handleClick} {...props}>
       {children}
-    </div>
+    </button>
   );
 }
 

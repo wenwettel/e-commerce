@@ -1,14 +1,13 @@
 import React from 'react';
 import './styles.css';
 
-function Item({ name, category, stock, img, description, id }) {
+function Item({ name, stock, img, id, price }) {
   return (
     <div className="item" key={id}>
       <img src={img} alt={name} />
       <h3>{name}</h3>
-      <p>{description}</p>
-      <p>{`stock: ${stock} `}</p>
-      <p>{category}</p>
+      <p>Precio : {price}</p>
+      <p>Stock disponible: {stock}</p>
     </div>
   );
 }
