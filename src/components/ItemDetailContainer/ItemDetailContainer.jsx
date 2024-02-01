@@ -1,12 +1,16 @@
 import React from 'react';
 import { getProductById } from '../../serverMock/productMock';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import './styles.css';
 import { useParams } from 'react-router-dom';
 import Spinner from '../commons/Spinner/Spinner';
+import CartContext from '../../context/CartConext';
 
 function ItemDetailContainer() {
+  const { itemsCart } = useContext(CartContext);
+  console.log(itemsCart);
+
   const { itemId } = useParams();
   const [productDetail, setProductDetail] = useState({
     data: null,
